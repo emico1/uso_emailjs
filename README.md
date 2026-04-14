@@ -215,14 +215,20 @@ mi-portafolio/
 ---
 
 ## Preguntas de reflexión (para el reporte del lab)
-
-1. ¿Por qué se usa `event.preventDefault()` en el formulario?
-2. ¿Qué ventaja tiene usar `async/await` frente a callbacks para el envío del email?
-3. ¿Cuál es la diferencia entre el `Service ID` y el `Template ID` en EmailJS?
+1. ¿Por qué se usa event.preventDefault() en el formulario?
+Para que la página no se recargue al enviar el formulario y JavaScript pueda manejar el envío.
+2. ¿Qué ventaja tiene usar async/await frente a callbacks para el envío del email?
+Hace el código más fácil de leer, entender y corregir si hay errores.
+3. ¿Cuál es la diferencia entre el Service ID y el Template ID en EmailJS?
+El Service ID indica qué servicio de correo se usa, y el Template ID indica qué plantilla de mensaje se va a enviar.
 4. ¿Qué pasa si el usuario envía el formulario sin conexión a internet?
+El correo no se envía y aparece un mensaje de error.
 5. ¿Por qué se valida el formulario en el cliente antes de llamar a la API?
+Para revisar que los datos estén bien antes de intentar enviarlos.
 6. ¿Es seguro usar la Public Key de EmailJS en el código frontend? ¿Qué riesgo existe y cómo lo mitiga el Allowlist de dominios?
-7. ¿Qué alternativa existiría si necesitáramos enviar emails con mayor control (ej. con archivos adjuntos, historial, etc.)?
+Sí, porque esa clave está pensada para usarse en frontend. El riesgo es que alguien la copie, pero el Allowlist limita desde qué dominios se puede usar.
+7. ¿Qué alternativa existiría si necesitáramos enviar emails con mayor control?
+Usar un backend propio o un servicio como Nodemailer, SendGrid o Mailgun.
 
 ---
 
